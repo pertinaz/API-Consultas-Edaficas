@@ -2,12 +2,17 @@ import tkinter as tk
 from tkinter import *
 from tkinter import ttk
 import customtkinter
+import json
+
 
 # System settings and app frame 
 customtkinter.set_appearance_mode("System")
 customtkinter.set_default_color_theme("green")
 customtkinter.deactivate_automatic_dpi_awareness()
 
+#load the json file into the interface and add it to the table
+with open('QueryResults.json','r') as file:
+    QueryResults = json.load(file)
 
 """
 ("Departamento","Municipio","Cultivo","Topologia","pH del agua","Fósforo (P)","Potasio(K)")
@@ -19,6 +24,7 @@ class Query(customtkinter.CTkToplevel):
         super().__init__(*args, **kwargs)
         self.geometry("400x300")
         self.title("Consulta por departamento")
+        self.iconbitmap('venv/icon.ico')
         self.label = customtkinter.CTkLabel(self, text="Consulta por departamento")
         self.label.pack(padx=20, pady=20)
 
@@ -27,13 +33,16 @@ class Query(customtkinter.CTkToplevel):
         data.heading("Departamento",text="Departamento")
         data.heading("Municipio",text="Municipio")
         data.heading("Cultivo",text="Cultivo")
-        data.heading("Topofrafia",text="Topografia")
+        data.heading("Topografia",text="Topografia")
         data.heading("pH",text="pH del agua")
         data.heading("Fósforo",text="Fósforo (p) ")
         data.heading("Potasio",text="Potasio (K) ")
 
         #Automation of data Query
-        data.insert("",END,text="",values=("Aqui va el departamento","Aqui va el municipio","Aqui va el cultivo","Aqui va la topografia","Aqui va el PH del agua","Aqui va el Fosforo","Aqui va el potasio"))
+        #data.insert("",END,text="",values=("Aqui va el departamento","Aqui va el municipio","Aqui va el cultivo","Aqui va la topografia","Aqui va el PH del agua","Aqui va el Fosforo","Aqui va el potasio"))
+
+        for row in QueryResults: 
+            data.insert("end",(row["Departamento"],row["Municipio"],row["Cultivo"],row["Topografia"],row["pH"],row["Fosforo"],row["Potasio"],))
 
         data.place(y=300)
         data.pack(padx=10,pady=10)
@@ -41,22 +50,43 @@ class Query(customtkinter.CTkToplevel):
         
         
 
-# Create de Graphic User interface for the main menu
+# Create the Graphic User interface for the main menu
 class Interface(customtkinter.CTk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.geometry("400x600")
+        self.geometry("400x400")
         self.title("Edaficas Risaralda")
+        self.iconbitmap('venv/icon.ico')
+
+
 
         # Main menu 
-        departamento = customtkinter.CTkEntry(self, placeholder_text="Departamento")
-        departamento.pack(padx=10,pady=10)
+        departament = customtkinter.CTkComboBox(self,values=['DEPARTAMENTO','RISARALDA'])
+        departament.pack(padx=10,pady=10)
 
-        municipio = customtkinter.CTkEntry(self,placeholder_text="Municipio")
-        municipio.pack(padx=10,pady=10)
+        municipalityList=[
+            'MUNICIPIO',
+            'APIA',
+            'BALBOA',     
+            'BELEN DE UMBRIA',     
+            'DOSQUEBRADAS',     
+            'GUATICA',    
+            'LA CELIA',     
+            'LA VIRGINIA',     
+            'MARSELLA',    
+            'MISTRATO',
+            'PEREIRA',    
+            'PUEBLO RICO',    
+            'QUINCHIA',    
+            'SANTA ROSA DE CABAL',    
+            'SANTUARIO'
+        ]
 
-        cultivo = customtkinter.CTkEntry(self,placeholder_text="Cultivo")
-        cultivo.pack(padx=10,pady=10)
+        municipality = customtkinter.CTkComboBox(self,values=municipalityList)
+        municipality.pack(padx=10,pady=10)
+
+        crop = customtkinter.CTkEntry(self,placeholder_text="Cultivo")
+        crop.pack(padx=10,pady=10)
 
         limit = customtkinter.CTkEntry(self,placeholder_text="Limite consulta")
         limit.pack(padx=10,pady=10)
