@@ -12,6 +12,34 @@ Los diagramas de componentes son útiles para comprender la estructura general d
 En resumen, un diagrama de componentes proporciona una vista de alto nivel de la arquitectura de un sistema de software, mostrando cómo los distintos componentes interactúan entre sí para lograr los objetivos del sistema.
 
 
-Algunos elementos comunes que se pueden encontrar en un diagrama de componentes incluyen:
+
+Recursos y extensiones: 
+    Indent Nested Dictionary
+    Json
+    SODA API
+    Pandas
+    Sodapy
+    tkinter
+    CustomTkinter
+    ChatGPT
+    Python documentation
+
+
+Licencia SODA
+Dataset Identifier: ch4u-f3i5
+Total Rows: 46745
+Source Domain: www.datos.gov.co
+Created: 23/5/2017, 8:54:27 a. m.
+Last Updated: 18/12/2019, 3:45:39 p. m.
+Category: Agricultura y Desarrollo Rural
+Attribution: Corporación Colombiana de Investigación Agropecuaria CORPOIC
+License: Creative Commons Attribution | Share Alike 4.0 International
+Owner: Agrosavia
+Endpoint Version: 2.1
+
+
+
+
+
 
 
