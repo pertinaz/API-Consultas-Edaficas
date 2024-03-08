@@ -13,3 +13,12 @@ Universidad Tecnológica de Pereira
 ![Query window version 1](https://github.com/pertinaz/ProyectoAPI-edaficas-en-Python/assets/87156289/a914f305-21b0-4db6-b212-fb14b8b59032)
 ![Query window version 2](https://github.com/pertinaz/ProyectoAPI-edaficas-en-Python/assets/87156289/b2596b82-f2e3-48a4-a71d-6f978940e6b3)
 
+Actualizacion:
+
+
+
+![GUI](https://github.com/pertinaz/ProyectoAPI-edaficas-en-Python/assets/87156289/144611cd-c114-4a71-8c72-4f8f75fdafc7)
+
+![TreeView](https://github.com/pertinaz/ProyectoAPI-edaficas-en-Python/assets/87156289/160c0cb9-39c5-43f1-b400-45a2c41b822a)
+
+
