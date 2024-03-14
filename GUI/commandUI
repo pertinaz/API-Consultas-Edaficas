@@ -1,0 +1,33 @@
+
+def phMedian(results_df):
+    ph = 'ph_agua_suelo_2_5_1_0'
+    if results_df.empty:
+        print("No hay datos filtrados parra calcular la mediana.")
+        return
+    
+    results_df[ph] = pd.to_numeric(results_df[ph], errors='coerce')
+    
+    medianPh = results_df[ph].median()
+    print(f"La mediana de '{ph}' para todos los datos filtrados es: '{medianPh}'")
+
+def matchMedian(results_df):
+    match = 'f_sforo_p_bray_ii_mg_kg'
+    if results_df.empty:
+        print("No hay datos filtrados parra calcular la mediana.")
+        return
+    
+    results_df[match] = pd.to_numeric(results_df[match], errors='coerce')
+    
+    medianMatch = results_df[match].median()
+    print(f"La mediana de '{match}' para todos los datos filtrados es: '{medianMatch}'")
+
+def potassiumMedian(results_df):
+    potassium = 'potasio_k_intercambiable_cmol_kg'
+    if results_df.empty:
+        print("No hay datos filtrados parra calcular la mediana.")
+        return
+    
+    results_df[potassium] = pd.to_numeric(results_df[potassium], errors='coerce')
+    
+    median = results_df[potassium].median()
+    print(f"La mediana de '{potassium}' para todos los datos filtrados es: '{median}'")    
